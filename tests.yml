@@ -18,14 +18,6 @@ jobs:
         distribution: 'temurin'
         java-version: '11'
 
-    - name: Cache local Maven repository
-      uses: actions/cache@v2
-      with:
-         path: ~/.m2/repository
-         key: ${{ runner.os }}-maven-${{ hashFiles('**/deps.edn') }}
-         restore-keys: |
-           ${{ runner.os }}-maven-
-
     - name: Install clojure tools
       uses: DeLaGuardo/setup-clojure@3.4
       with:
